@@ -1,3 +1,4 @@
+//testando git
 let listaDeSorteados = [];
 let numeroLimite = 10;
 let numeroSecreto = gerarNumero();
@@ -6,18 +7,18 @@ let tentativas = 1;
 function exibirTexto(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
-     if ('speechSynthesis' in window) {
+    if ('speechSynthesis' in window) {
         let utterance = new SpeechSynthesisUtterance(texto);
-        utterance.lang = 'pt-BR'; 
-        utterance.rate = 1.2; 
-        window.speechSynthesis.speak(utterance); 
+        utterance.lang = 'pt-BR';
+        utterance.rate = 1.2;
+        window.speechSynthesis.speak(utterance);
     } else {
         console.log("Web Speech API não suportada neste navegador.");
     }
 
 }
 
-function exibirMensagem(){
+function exibirMensagem() {
     exibirTexto('h1', 'Jogo do número secreto');
     exibirTexto('p', 'Escolha um numero entre 1 e 10: ');
 }
@@ -57,11 +58,11 @@ function gerarNumero() {
     let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
 
     let quantidadeDeElementosNaLista = listaDeSorteados.length;
-    if (quantidadeDeElementosNaLista == numeroLimite){
+    if (quantidadeDeElementosNaLista == numeroLimite) {
         listaDeSorteados = [];
     }
 
-    if (listaDeSorteados.includes(numeroEscolhido)){
+    if (listaDeSorteados.includes(numeroEscolhido)) {
         return gerarNumero();
     } else {
         listaDeSorteados.push(numeroEscolhido);
@@ -75,7 +76,7 @@ function limparCampo() {
     chute.value = '';
 }
 
-function reiniciarJogo(){
+function reiniciarJogo() {
     numeroSecreto = gerarNumero();
     limparCampo();
     tentativas = 1;
