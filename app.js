@@ -1,6 +1,6 @@
 //testando git
 let listaDeSorteados = [];
-let numeroLimite = 10;
+let numeroLimite = 50;
 let numeroSecreto = gerarNumero();
 let tentativas = 1;
 
